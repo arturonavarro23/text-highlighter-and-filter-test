@@ -1,0 +1,14 @@
+@import './scss/abstracts/variables';
+
+.app {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 20px;
+
+  h1 {
+    font-size: 30px;
+    @media (max-width: $screen-xs) {
+      font-size: 20px;
+    }
+  }
+}

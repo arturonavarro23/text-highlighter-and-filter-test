@@ -1,0 +1,24 @@
+@import '../../scss/abstracts/variables';
+
+.color-filters {
+  h4 {
+    margin: 10px 0;
+    text-transform: capitalize;
+  }
+
+  span {
+    display: inline-block;
+  }
+
+  .green {
+    background-color: $green-color;
+  }
+
+  .yellow {
+    background-color: $yellow-color;
+  }
+
+  .red {
+    background-color: $red-color;
+  }
+}

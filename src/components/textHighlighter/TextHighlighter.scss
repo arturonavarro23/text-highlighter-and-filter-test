@@ -1,0 +1,41 @@
+@import '../../scss/abstracts/variables';
+
+.text-highlighter {
+  margin: 20px 0;
+  position: relative;
+
+  .text-editor {
+    font-family: $font-family;
+    font-size: 15px;
+    height: 250px;
+    width: 100%;
+    z-index: -1;
+    overflow: scroll;
+    white-space: pre-wrap;
+    background: transparent;
+  }
+
+  .display {
+    position: absolute;
+    color: transparent;
+    width: 100%;
+    padding: 4px;
+    transform: translateY(calc(-100% - 4px));
+    flex-direction: column;
+
+    .green {
+      background-color: $green-color;
+      color: inherit;
+    }
+
+    .yellow {
+      background-color: $yellow-color;
+      color: inherit;
+    }
+
+    .red {
+      background-color: $red-color;
+      color: inherit;
+    }
+  }
+}

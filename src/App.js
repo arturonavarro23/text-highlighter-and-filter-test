@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { TextProvider } from './store/providers/textProvider';
+import reducer, { initialState } from './store/reducer';
+import TextHighlighter from './components/textHighlighter';
+import ColorSelector from './components/colorSelector';
+import ColorFilters from './components/colorFilters';
+
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TextProvider initialState={initialState} reducer={reducer}>
+      <section className="app">
+        <ColorSelector />
+        <TextHighlighter />
+        <ColorFilters />
+      </section>
+    </TextProvider>
   );
 }
 

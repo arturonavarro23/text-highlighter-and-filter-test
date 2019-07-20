@@ -1,0 +1,25 @@
+@import '../../../scss/abstracts/variables';
+
+.btn {
+  cursor: pointer;
+  margin-right: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  &.btn--red {
+    background-color: $red-color;
+  }
+
+  &.btn--green {
+    background-color: $green-color;
+  }
+
+  &.btn--yellow {
+    background-color: $yellow-color;
+  }
+
+  &.selected {
+    border: solid 3px $blue-color;
+  }
+}
