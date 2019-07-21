@@ -14,6 +14,7 @@ const ColorFilters  = () => {
   }, dispatch] = useStateValue();
 
   const onClick = color => () => {
+    // check if filter is already active to toggle the state
     if (selectedFilters.includes(color)) {
       dispatch(removeFilter(color));
     } else {
@@ -31,12 +32,12 @@ const ColorFilters  = () => {
   );
 
   const printFilteredText = color => {
-
+    // get words from active color filter
     const highlights = ranges.filter(r => r.color === color)
       .map(t => {
         const word = text.substring(t.start, t.end);
         return(
-          <React.Fragment>
+          <React.Fragment key={`${t.start}-${t.end}`}>
             <span className={color}>
               {word}
             </span>
@@ -46,7 +47,7 @@ const ColorFilters  = () => {
       });
 
     return (
-      <React.Fragment>
+      <React.Fragment key={`${color}-text`}>
         <h4>
           {color}
         </h4>
