@@ -20,7 +20,7 @@ const TextHighlighter = () => {
   const onMouseUp = () => {
     const { selectionStart, selectionEnd } = textAreaRef.current;
     // Check if user just clic the textarea
-    if (selectionStart !== selectionEnd) {
+    if (selectionStart !== selectionEnd && selectedColor) {
       setRange(selectionStart, selectionEnd);
     }
   };
@@ -29,14 +29,25 @@ const TextHighlighter = () => {
     // Remove all the ranges that are inside the new one
     const newRanges = ranges.filter(r => !(r.start >= start && r.end <= end));
 
-    // for (let i = 0; i < newRanges.length; i++) {
-    //   let range = newRanges[i];
-    //   if (range.start < start && range.end >= start) {
-    //     newRanges[i].end = range.end === start ? range.end - 1 : range.end - (range.end - start);
-    //   } else if (range.start <= end && range.end > end) {
-    //     newRanges[i].start = range.start === end ? range.start + 1 : range.start + (end - range.start);
-    //   }
-    // }
+    // Find if we have some intersections
+    for (let i = 0; i < newRanges.length; i++) {
+      let range = newRanges[i];
+      // if the new range is between existing range
+      if (range.start <= start && range.end >= end) {
+        newRanges.push({
+          start: end - 1,
+          end: range.end,
+          color: newRanges[i].color,
+        });
+        newRanges[i].end = start;
+      // if the new range is before the an existing range
+      } else if (range.start < start && range.end >= start) {
+        newRanges[i].end = range.end === start ? range.end - 1 : range.end - (range.end - start);
+      // if the new range after an existing range
+      } else if (range.start <= end && range.end > end) {
+        newRanges[i].start = range.start === end ? range.start + 1 : range.start + (end - range.start);
+      }
+    }
 
     newRanges.push({ start, end, color: selectedColor });
     dispatch(modifyRanges(newRanges));
