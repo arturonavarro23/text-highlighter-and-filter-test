@@ -7,11 +7,7 @@ const ColorSelector = () => {
   const [{ colors, selectedColor }, dispatch] = useStateValue();
 
   const onColorButtonClick = color => () => {
-    if (selectedColor === color) {
-      dispatch(setColor(null));
-    } else {
-      dispatch(setColor(color));
-    }
+    dispatch(setColor(selectedColor === color ? null : color));
   }
 
   const renderButton = color => (

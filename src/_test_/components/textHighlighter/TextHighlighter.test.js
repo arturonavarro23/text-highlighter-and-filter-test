@@ -6,7 +6,7 @@ import TextHighlighter from '../../../components/textHighlighter';
 import { defaultState } from '../../mocks';
 
 describe('<TextHighlighter> test', () => {
-  it('Snapshot should renders correctly', () => {
+  it('Snapshot should render correctly', () => {
     jest
       .spyOn(TextProvider, 'useStateValue')
       .mockImplementation(() => [defaultState]);

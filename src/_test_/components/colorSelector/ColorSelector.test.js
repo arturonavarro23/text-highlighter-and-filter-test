@@ -6,7 +6,7 @@ import ColorSelector from '../../../components/colorSelector';
 import { defaultState } from '../../mocks';
 
 describe('<ColorSelector> test', () => {
-  it('Snapshot should renders correctly', () => {
+  it('Snapshot should render correctly', () => {
     jest
       .spyOn(TextProvider, 'useStateValue')
       .mockImplementation(() => [defaultState]);

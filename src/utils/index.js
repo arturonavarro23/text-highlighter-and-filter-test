@@ -5,7 +5,7 @@
  * @params {Array} ranges
  * @return {Array<JSON>} ranges
  */
-export const getRanges = (start, end, ranges) => {
+export const getRanges = ({ start, end, color }, ranges) => {
   // Remove all the ranges that are inside the new one
   const newRanges = ranges.filter(r => !(r.start >= start && r.end <= end));
 
@@ -28,7 +28,7 @@ export const getRanges = (start, end, ranges) => {
       newRanges[i].start = range.start === end ? range.start + 1 : range.start + (end - range.start);
     }
   }
-
+  newRanges.push({ start, end, color });
   return newRanges;
 };
 

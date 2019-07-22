@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import Button from '../../../../components/common/button';
 
 describe('<ColorSelector> test', () => {
-  it('Snapshot should renders correctly', () => {
+  it('Snapshot should render correctly', () => {
     const mockFn = jest.fn();
     const button = (
       <Button

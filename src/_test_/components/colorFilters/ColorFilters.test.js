@@ -6,7 +6,7 @@ import ColorFilters from '../../../components/colorFilters';
 import { defaultState } from '../../mocks';
 
 describe('<colorFilters> test', () => {
-  it('Snapshot should renders correctly', () => {
+  it('Snapshot should render correctly', () => {
     jest
       .spyOn(TextProvider, 'useStateValue')
       .mockImplementation(() => [defaultState]);

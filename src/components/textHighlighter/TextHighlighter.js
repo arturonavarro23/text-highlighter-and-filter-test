@@ -27,8 +27,7 @@ const TextHighlighter = () => {
   };
 
   const setRange = (start, end) => {
-    const newRanges = getRanges(start, end, ranges);
-    newRanges.push({ start, end, color: selectedColor });
+    const newRanges = getRanges({ start, end, color: selectedColor }, ranges);
     dispatch(modifyRanges(newRanges));
   };
 

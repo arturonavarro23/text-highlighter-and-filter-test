@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ColorSelector> test Snapshot should renders correctly 1`] = `
+exports[`<ColorSelector> test Snapshot should render correctly 1`] = `
 <button
   className="btn btn--red"
   onClick={[MockFunction]}
