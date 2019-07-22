@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextHighlighter> test Snapshot should renders correctly 1`] = `
+<div
+  className="text-highlighter"
+>
+  <textarea
+    className="text-editor"
+    onChange={[Function]}
+    onMouseUp={[Function]}
+    onScroll={[Function]}
+    value="Test words"
+  />
+  <div
+    className="text-editor display"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+</div>
+`;

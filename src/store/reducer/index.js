@@ -47,4 +47,4 @@ export const initialState = {
   selectedColor: 'red',
   selectedFilters: [],
   ranges: []
-}
+};

@@ -1,5 +1,5 @@
-import reducer from '../../store/reducer';
-import { types } from '../../store/actions';
+import reducer from '../../../store/reducer';
+import { types } from '../../../store/actions';
 
 describe("Reducer test", () => {
   it("Sould set text", () => {

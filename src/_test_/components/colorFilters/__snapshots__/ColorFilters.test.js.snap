@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<colorFilters> test Snapshot should renders correctly 1`] = `
+<div
+  className="color-filters"
+>
+  <h1>
+    Filters
+  </h1>
+  <button
+    className="btn btn--red selected"
+    onClick={[Function]}
+  />
+  <button
+    className="btn btn--yellow selected"
+    onClick={[Function]}
+  />
+  <button
+    className="btn btn--green"
+    onClick={[Function]}
+  />
+  <div
+    className="filtered-text"
+  >
+    <h4>
+      red
+    </h4>
+    <h4>
+      yellow
+    </h4>
+  </div>
+</div>
+`;

@@ -1,4 +1,4 @@
-import * as actions from '../../store/actions';
+import * as actions from '../../../store/actions';
 
 describe('Actions test', () => {
   it('Should create an action to setText', () => {
